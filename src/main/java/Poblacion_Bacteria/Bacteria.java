@@ -25,5 +25,45 @@ public class Bacteria {
         this.finalFood = finalFood;
     }
 
-    
+    // Getters and Setters
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(String startDate) {
+        this.startDate = startDate;
+    }
+
+    public String getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(String endDate) {
+        this.endDate = endDate;
+    }
+
+    public int getInitialBacteriaCount() {
+        return initialBacteriaCount;
+    }
+
+    public void setInitialBacteriaCount(int initialBacteriaCount) {
+        this.initialBacteriaCount = initialBacteriaCount;
+    }
+
+    public int getTemperature() {
+        return temperature;
+    }
+
+    public void setTemperature(int temperature) {
+        this.temperature = temperature;
+    }
 }
