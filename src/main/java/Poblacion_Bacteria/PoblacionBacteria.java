@@ -67,4 +67,29 @@ public class PoblacionBacteria extends JFrame{
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
     }
+
+    private void submitForm() {
+        try {
+            String name = nameField.getText();
+            if (name.isEmpty()) {
+                throw new Exception("Name is required");
+            }
+
+            String startDate = startDateField.getText();
+            if (startDate.isEmpty()) {
+                throw new Exception("Start Date is required");
+            }
+
+            String endDate = endDateField.getText();
+            if (endDate.isEmpty()) {
+                throw new Exception("End Date is required");
+            }
+
+            int initialBacteriaCount = Integer.parseInt(initialBacteriaCountField.getText());
+            int temperature = Integer.parseInt(temperatureField.getText());
+            String luminosity = luminosityField.getText();
+            int initialFood = Integer.parseInt(initialFoodField.getText());
+            int foodIncreaseDay = Integer.parseInt(foodIncreaseDayField.getText());
+            int foodIncreaseAmount = Integer.parseInt(foodIncreaseAmountField.getText());
+            int finalFood = Integer.parseInt(finalFoodField.getText());
 }
