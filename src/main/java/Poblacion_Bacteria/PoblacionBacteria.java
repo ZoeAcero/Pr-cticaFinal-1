@@ -92,7 +92,7 @@ public class PoblacionBacteria extends JFrame{
             int foodIncreaseDay = Integer.parseInt(foodIncreaseDayField.getText());
             int foodIncreaseAmount = Integer.parseInt(foodIncreaseAmountField.getText());
             int finalFood = Integer.parseInt(finalFoodField.getText());
-            BacteriaPopulation bacteriaPopulation = new BacteriaPopulation(name, startDate, endDate, initialBacteriaCount, temperature, luminosity, initialFood, foodIncreaseDay, foodIncreaseAmount, finalFood);
+            Bacteria bacteria = new Bacteria(name, startDate, endDate, initialBacteriaCount, temperature, luminosity, initialFood, foodIncreaseDay, foodIncreaseAmount, finalFood);
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(this, "Please enter a valid number", "Error", JOptionPane.ERROR_MESSAGE);
         } catch (Exception e) {
