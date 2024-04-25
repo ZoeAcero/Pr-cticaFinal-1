@@ -66,4 +66,36 @@ public class Bacteria {
     public void setTemperature(int temperature) {
         this.temperature = temperature;
     }
+
+    public String getLuminosity() {
+        return luminosity;
+    }
+
+    public void setLuminosity(String luminosity) {
+        this.luminosity = luminosity;
+    }
+
+    public int getInitialFood() {
+        return initialFood;
+    }
+
+    public void setInitialFood(int initialFood) {
+        this.initialFood = initialFood;
+    }
+
+    public int getFoodIncreaseDay() {
+        return foodIncreaseDay;
+    }
+
+    public void setFoodIncreaseDay(int foodIncreaseDay) {
+        this.foodIncreaseDay = foodIncreaseDay;
+    }
+
+    public int getFoodIncreaseAmount() {
+        return foodIncreaseAmount;
+    }
+
+    public void setFoodIncreaseAmount(int foodIncreaseAmount) {
+        this.foodIncreaseAmount = foodIncreaseAmount;
+    }
 }
