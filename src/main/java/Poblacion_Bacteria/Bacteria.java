@@ -98,4 +98,12 @@ public class Bacteria {
     public void setFoodIncreaseAmount(int foodIncreaseAmount) {
         this.foodIncreaseAmount = foodIncreaseAmount;
     }
+
+    public int getFinalFood() {
+        return finalFood;
+    }
+
+    public void setFinalFood(int finalFood) {
+        this.finalFood = finalFood;
+    }
 }
