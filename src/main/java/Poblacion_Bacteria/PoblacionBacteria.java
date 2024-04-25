@@ -46,4 +46,25 @@ public class PoblacionBacteria extends JFrame{
         add(new JLabel("Initial Food:"));
         initialFoodField = new JTextField();
         add(initialFoodField);
+
+        add(new JLabel("Food Increase Day:"));
+        foodIncreaseDayField = new JTextField();
+        add(foodIncreaseDayField);
+
+        add(new JLabel("Food Increase Amount:"));
+        foodIncreaseAmountField = new JTextField();
+        add(foodIncreaseAmountField);
+
+        add(new JLabel("Final Food:"));
+        finalFoodField = new JTextField();
+        add(finalFoodField);
+
+        JButton submitButton = new JButton("Submit");
+        submitButton.addActionListener(e -> submitForm());
+        add(submitButton);
+
+        setSize(400, 600);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setVisible(true);
+    }
 }
