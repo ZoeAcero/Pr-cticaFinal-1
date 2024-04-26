@@ -15,4 +15,17 @@ public class Experimento {
     public void addPopulation(PoblacionBacteria poblacion) {
         populations.add(poblacion);
     }
+
+    public void removePopulation(PoblacionBacteria poblacion) {
+        populations.remove(poblacion);
+    }
+
+    public PoblacionBacteria getPopulation(String name) {
+        for (PoblacionBacteria population : populations) {
+            if (population.getName().equals(name)) {
+                return population;
+            }
+        }
+        return null;
+    }
 }
