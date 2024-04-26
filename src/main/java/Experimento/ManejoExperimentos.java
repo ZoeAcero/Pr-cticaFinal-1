@@ -14,7 +14,7 @@ public class ManejoExperimentos {
     public Experimento openExperiment(String filename) throws IOException, ClassNotFoundException {
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(filename))) {
             Experimento experiment = (Experimento) ois.readObject();
-            experimentos.put(filename, experiment);
+            experimentos.put(filename, experimentos);
             return experiment;
         }
     }
@@ -28,7 +28,7 @@ public class ManejoExperimentos {
 
     public Experimento createNewExperiment(String filename) {
         Experimento experiment = new Experimento();
-        experimentos.put(filename, experiment);
+        experimentos.put(filename, experimentos);
         return experiment;
     }
 
