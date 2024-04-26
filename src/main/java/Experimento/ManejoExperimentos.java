@@ -42,4 +42,19 @@ public class ManejoExperimentos {
             file.delete();
         }
     }
+
+    public static void main(String[] args) {
+        ManejoExperimentos manager = new ManejoExperimentos();
+        Experimento experiment = manager.createNewExperiment("experiment1");
+        try {
+            manager.saveExperiment(experiment, "experiment1");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        List<String> allExperiments = manager.getAllExperiments();
+        for (String experimento : allExperiments) {
+            System.out.println(experiment);
+        }
+    }
 }
