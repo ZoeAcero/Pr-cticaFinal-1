@@ -2,6 +2,7 @@ package Experimento;
 
 import java.io.*;
 import java.util.*;
+import Experimento.Experimento;
 
 public class ManejoExperimentos {
     private Map<String, Experimento> experimentos;
