@@ -4,6 +4,7 @@ import Poblacion_Bacteria.PoblacionBacteria;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.io.Serializable;
 
 public class Experimento {
     private List<PoblacionBacteria> populations;

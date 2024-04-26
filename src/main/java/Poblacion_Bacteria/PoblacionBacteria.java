@@ -2,6 +2,7 @@ package Poblacion_Bacteria;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.Serializable;
 
 
 public class PoblacionBacteria extends JFrame{
