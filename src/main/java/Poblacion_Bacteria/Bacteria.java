@@ -106,4 +106,17 @@ public class Bacteria {
     public void setFinalFood(int finalFood) {
         this.finalFood = finalFood;
     }
+
+    public void printDetails() {
+        System.out.println("Name: " + name);
+        System.out.println("Start Date: " + startDate);
+        System.out.println("End Date: " + endDate);
+        System.out.println("Initial Bacteria Count: " + initialBacteriaCount);
+        System.out.println("Temperature: " + temperature);
+        System.out.println("Luminosity: " + luminosity);
+        System.out.println("Initial Food: " + initialFood);
+        System.out.println("Food Increase Day: " + foodIncreaseDay);
+        System.out.println("Food Increase Amount: " + foodIncreaseAmount);
+        System.out.println("Final Food: " + finalFood);
+    }
 }
