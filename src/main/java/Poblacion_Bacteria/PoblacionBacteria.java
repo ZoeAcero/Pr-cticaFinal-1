@@ -100,8 +100,4 @@ public class PoblacionBacteria extends JFrame implements Serializable{
             JOptionPane.showMessageDialog(this, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
-
-    public static void main(String[] args) {
-        new PoblacionBacteria();
-    }
 }
