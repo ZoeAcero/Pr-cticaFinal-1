@@ -48,7 +48,7 @@ public class ManejoExperimentos {
         ManejoExperimentos manager = new ManejoExperimentos();
         Experimento experiment = manager.createNewExperiment("experimento1");
         PoblacionBacteria poblacion = new PoblacionBacteria();
-         experiment.addPopulation(poblacion);
+        experiment.addPopulation(poblacion);
         try {
             manager.saveExperiment(experiment, "experimento1");
         } catch (IOException e) {
@@ -57,7 +57,7 @@ public class ManejoExperimentos {
 
         List<String> allExperiments = manager.getAllExperiments();
         for (String experimento : allExperiments) {
-            System.out.println(experiment);
+            System.out.println(experimento); // Imprimir el nombre del experimento
         }
     }
 }
