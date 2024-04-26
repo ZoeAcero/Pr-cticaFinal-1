@@ -30,4 +30,16 @@ public class ManejoExperimentos {
         experimentos.put(filename, experiment);
         return experiment;
     }
+
+    public List<String> getAllExperiments() {
+        return new ArrayList<>(experimentos.keySet());
+    }
+
+    public void deleteExperiment(String filename) {
+        experimentos.remove(filename);
+        File file = new File(filename);
+        if (file.exists()) {
+            file.delete();
+        }
+    }
 }
