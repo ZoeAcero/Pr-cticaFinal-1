@@ -2,6 +2,7 @@ package Experimento;
 
 import java.io.*;
 import java.util.*;
+import Poblacion_Bacteria.PoblacionBacteria;
 
 public class ManejoExperimentos {
     private Map<String, Experimento> experimentos;
@@ -45,9 +46,11 @@ public class ManejoExperimentos {
 
     public static void main(String[] args) {
         ManejoExperimentos manager = new ManejoExperimentos();
-        Experimento experiment = manager.createNewExperiment("experiment1");
+        Experimento experiment = manager.createNewExperiment("experimento1");
+        PoblacionBacteria poblacion = new PoblacionBacteria();
+         experiment.addPopulation(poblacion);
         try {
-            manager.saveExperiment(experiment, "experiment1");
+            manager.saveExperiment(experiment, "experimento1");
         } catch (IOException e) {
             e.printStackTrace();
         }
