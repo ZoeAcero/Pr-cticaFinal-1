@@ -5,7 +5,7 @@ import java.awt.*;
 import java.io.Serializable;
 
 
-public class PoblacionBacteria extends JFrame{
+public class PoblacionBacteria extends JFrame implements Serializable{
     private JTextField nameField;
     private JTextField startDateField;
     private JTextField endDateField;
