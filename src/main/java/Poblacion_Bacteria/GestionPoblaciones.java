@@ -27,4 +27,15 @@ public class GestionPoblaciones  extends JFrame{
             }
         });
 
+        setLayout(new BorderLayout());
+        add(new JScrollPane(list), BorderLayout.CENTER);
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.add(addButton);
+        buttonPanel.add(removeButton);
+        add(buttonPanel, BorderLayout.SOUTH);
+
+        setSize(400, 300);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+
     }
