@@ -104,4 +104,19 @@ public class ManejoExperimentos {
 
     public void crearNuevaPoblacion() {
     }
+
+    public void visualizarPoblaciones() {
+    }
+
+    public void borrarPoblacion() {
+    }
+
+    public void verInformacionPoblacion() {
+    }
+
+    public void guardarExperimento() {
+    }
+
+    public void guardarExperimentoComo() {
+    }
 }
