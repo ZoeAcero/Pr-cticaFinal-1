@@ -119,4 +119,7 @@ public class ManejoExperimentos {
 
     public void guardarExperimentoComo() {
     }
+
+    public void abrirExperimento() {
+    }
 }
