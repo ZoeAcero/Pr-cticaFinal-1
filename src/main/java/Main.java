@@ -3,8 +3,7 @@ import Experimento.*;
 import Archivo.*;
 import Poblacion_Bacteria.*;
 import javax.swing.*;
-import java.util.List;
-import java.util.Date;
+
 
 
 public class Main {
@@ -53,7 +52,7 @@ public class Main {
 
         frame.setVisible(true);
     }
-    
+
 }
 
 

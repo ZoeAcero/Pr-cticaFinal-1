@@ -5,6 +5,8 @@ import java.io.*;
 import java.util.*;
 import Poblacion_Bacteria.PoblacionBacteria;
 
+import javax.swing.*;
+
 public class ManejoExperimentos {
     private Map<String, Experimento> experimentos;
 
@@ -12,36 +14,67 @@ public class ManejoExperimentos {
         experimentos = new HashMap<>();
     }
 
-    public Experimento openExperiment(String filename) throws IOException, ClassNotFoundException {
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(filename))) {
-            Experimento experiment = (Experimento) ois.readObject();
-            experimentos.put(filename, experiment);
-            return experiment;
+    private static void abrirExperimento(ManejoExperimentos gestor, JFrame frame) {
+        // Use a file chooser or similar to select the file
+        JFileChooser fileChooser = new JFileChooser();
+        int returnValue = fileChooser.showOpenDialog(null);
+        if (returnValue == JFileChooser.APPROVE_OPTION) {
+            File selectedFile = fileChooser.getSelectedFile();
+            try {
+                gestor.openExperiment(selectedFile.getPath());
+            } catch (IOException | ClassNotFoundException e) {
+                e.printStackTrace();
+            }
         }
     }
 
-    public void saveExperiment(Experimento experiment, String filename) throws IOException {
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(filename))) {
-            oos.writeObject(experiment);
-            experimentos.put(filename, experiment); // Corrección aquí
+    private static void crearNuevoExperimento(ManejoExperimentos gestor, JFrame frame) {
+        String filename = JOptionPane.showInputDialog(frame, "Enter the filename for the new experiment:");
+        gestor.createNewExperiment(filename);
+    }
+
+    private static void crearNuevaPoblacion(ManejoExperimentos gestor, JFrame frame) {
+        // You'll need to gather the necessary data to create a new PoblacionBacteria
+        // This is just a placeholder
+        PoblacionBacteria poblacion = new PoblacionBacteria();
+        gestor.getExperimentoActual().addPopulation(poblacion);
+    }
+
+    private static void visualizarPoblaciones(ManejoExperimentos gestor, JFrame frame) {
+        List<String> allExperiments = gestor.getAllExperiments();
+        for (String experiment : allExperiments) {
+            System.out.println(experiment);
         }
     }
 
-    public Experimento createNewExperiment(String filename) {
-        Experimento experiment = new Experimento();
-        experimentos.put(filename, experiment);
-        return experiment;
+    private static void borrarPoblacion(ManejoExperimentos gestor, JFrame frame) {
+        String filename = JOptionPane.showInputDialog(frame, "Enter the filename of the experiment to delete:");
+        gestor.deleteExperiment(filename);
     }
 
-    public List<String> getAllExperiments() {
-        return new ArrayList<>(experimentos.keySet());
+    private static void verInformacionPoblacion(ManejoExperimentos gestor, JFrame frame) {
+        // You'll need to implement a method to get the information of a population
+        // This is just a placeholder
+        String info = gestor.getExperimentoActual().getPopulationInfo();
+        JOptionPane.showMessageDialog(frame, info);
     }
 
-    public void deleteExperiment(String filename) {
-        experimentos.remove(filename);
-        File file = new File(filename);
-        if (file.exists()) {
-            file.delete();
+    private static void guardarExperimento(ManejoExperimentos gestor, JFrame frame) {
+        String filename = JOptionPane.showInputDialog(frame, "Enter the filename to save the current experiment:");
+        try {
+            gestor.saveExperiment(gestor.getExperimentoActual(), filename);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void guardarExperimentoComo(ManejoExperimentos gestor, JFrame frame) {
+        // This could be similar to guardarExperimento, but with a different filename
+        String filename = JOptionPane.showInputDialog(frame, "Enter the new filename to save the current experiment:");
+        try {
+            gestor.saveExperiment(gestor.getExperimentoActual(), filename);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
