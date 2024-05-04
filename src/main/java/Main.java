@@ -45,4 +45,11 @@ public class Main {
         guardarButton.addActionListener(e -> guardarExperimento(gestor, frame));
         panel.add(guardarButton);
 
+        JButton guardarComoButton = new JButton("Guardar como");
+        guardarComoButton.addActionListener(e -> guardarExperimentoComo(gestor, frame));
+        panel.add(guardarComoButton);
+
+        frame.setVisible(true);
+    }
+
     }
