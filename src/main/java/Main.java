@@ -3,6 +3,7 @@ import Experimento.*;
 import Archivo.*;
 import Poblacion_Bacteria.*;
 import javax.swing.*;
+import java.util.List;
 
 
 public class Main {
@@ -51,5 +52,54 @@ public class Main {
 
         frame.setVisible(true);
     }
+
+    private static void abrirExperimento(ManejoExperimentos gestor, JFrame frame) {
+        try {
+            List<String> nombresExperimentos = gestor.getNombresExperimentos();
+            JComboBox<String> comboBox = new JComboBox<>(nombresExperimentos.toArray(new String[0]));
+            JOptionPane.showMessageDialog(null, comboBox, "Selecciona un experimento", JOptionPane.QUESTION_MESSAGE);
+            String nombreExperimentoSeleccionado = (String) comboBox.getSelectedItem();
+            gestor.abrirExperimento(nombreExperimentoSeleccionado);
+            Experimento experimentoActual = gestor.getExperimentoActual();
+            JOptionPane.showMessageDialog(frame, experimentoActual.toString());
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(frame, "Error al abrir el experimento: " + ex.getMessage());
+        }
+    }
+
+    private static void crearNuevoExperimento(ManejoExperimentos gestor, JFrame frame) {
+        try {
+            String nombreExperimento = JOptionPane.showInputDialog("Introduce el nombre del experimento:");
+            gestor.crearNuevoExperimento(nombreExperimento);
+            String nombrePoblacion = JOptionPane.showInputDialog("Introduce el nombre de la población:");
+            Date fechaInicio = new Date();
+            Date fechaFin = new Date();
+            int numeroBacteriasIniciales = Integer.parseInt(JOptionPane.showInputDialog("Introduce el número de bacterias iniciales:"));
+            double temperatura = Double.parseDouble(JOptionPane.showInputDialog("Introduce la temperatura:"));
+            String condicionesLuminosidad = JOptionPane.showInputDialog("Introduce las condiciones de luminosidad (Alta, Media, Baja):");
+            int dosisComida = Integer.parseInt(JOptionPane.showInputDialog("Introduce la dosis de comida:"));
+            PoblacionDeBacterias nuevaPoblacion = new PoblacionDeBacterias(nombrePoblacion, fechaInicio, fechaFin, numeroBacteriasIniciales, temperatura, condicionesLuminosidad, dosisComida);
+            gestor.getExperimentoActual().agregarPoblacion(nuevaPoblacion);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(frame, "Error al crear el experimento: " + ex.getMessage());
+        }
+    }
+
+    private static void crearNuevaPoblacion(ManejoExperimentos gestor, JFrame frame) {
+        try {
+            String nombrePoblacion = JOptionPane.showInputDialog("Introduce el nombre de la población:");
+            Date fechaInicio = new Date();
+            Date fechaFin = new Date();
+            int numeroBacteriasIniciales = Integer.parseInt(JOptionPane.showInputDialog("Introduce el número de bacterias iniciales:"));
+            double temperatura = Double.parseDouble(JOptionPane.showInputDialog("Introduce la temperatura:"));
+            String condicionesLuminosidad = JOptionPane.showInputDialog("Introduce las condiciones de luminosidad (Alta, Media, Baja):");
+            int dosisComida = Integer.parseInt(JOptionPane.showInputDialog("Introduce la dosis de comida:"));
+            PoblacionDeBacterias nuevaPoblacion = new PoblacionDeBacterias(nombrePoblacion, fechaInicio, fechaFin, numeroBacteriasIniciales, temperatura, condicionesLuminosidad, dosisComida);
+            gestor.getExperimentoActual().agregarPoblacion(nuevaPoblacion);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(frame, "Error al crear la población: " + ex.getMessage());
+        }
+
+        
 
     }
