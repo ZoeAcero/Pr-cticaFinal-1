@@ -4,6 +4,7 @@ import java.util.*;
 import java.io.*;
 import java.util.*;
 import Poblacion_Bacteria.PoblacionBacteria;
+import Experimento.Experimento;
 
 import javax.swing.*;
 
@@ -20,17 +21,16 @@ public class ManejoExperimentos {
         int returnValue = fileChooser.showOpenDialog(null);
         if (returnValue == JFileChooser.APPROVE_OPTION) {
             File selectedFile = fileChooser.getSelectedFile();
-            try {
-                gestor.openExperiment(selectedFile.getPath());
-            } catch (IOException | ClassNotFoundException e) {
-                e.printStackTrace();
-            }
+            gestor.abrirExperimento(selectedFile.getPath());
         }
     }
 
     private static void crearNuevoExperimento(ManejoExperimentos gestor, JFrame frame) {
         String filename = JOptionPane.showInputDialog(frame, "Enter the filename for the new experiment:");
         gestor.createNewExperiment(filename);
+    }
+
+    private void createNewExperiment(String filename) {
     }
 
     private static void crearNuevaPoblacion(ManejoExperimentos gestor, JFrame frame) {
