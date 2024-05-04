@@ -14,13 +14,13 @@ public class Bacteria implements Serializable{
     private double foodIncreaseAmount;
     private double finalFood;
 
-    public Bacteria(String name, String startDate, String endDate, int initialBacteriaCount, double temperature, double luminosity, double initialFood, int foodIncreaseDay, double foodIncreaseAmount, double finalFood) {
+    public Bacteria(String name, String startDate, String endDate, int initialBacteriaCount, double temperature, String luminosity, double initialFood, int foodIncreaseDay, double foodIncreaseAmount, double finalFood) {
         this.name = name;
         this.startDate = startDate;
         this.endDate = endDate;
         this.initialBacteriaCount = initialBacteriaCount;
         this.temperature = temperature;
-        this.luminosity = luminosity;
+        this.luminosity = Double.parseDouble(luminosity);
         this.initialFood = initialFood;
         this.foodIncreaseDay = foodIncreaseDay;
         this.foodIncreaseAmount = foodIncreaseAmount;
@@ -96,6 +96,15 @@ public class Bacteria implements Serializable{
     }
 
     public void setFoodIncreaseDay(int foodIncreaseDay) {
-        this.foodIncreaseDay = foodIncrease
+        this.foodIncreaseDay = foodIncreaseDay;
+    }
 
+    public void setFoodIncreaseAmount(double foodIncreaseAmount) {
+        this.foodIncreaseAmount = foodIncreaseAmount;
+    }
+
+    public void setFinalFood(double finalFood) {
+        this.finalFood = finalFood;
+    }
+    
 }
