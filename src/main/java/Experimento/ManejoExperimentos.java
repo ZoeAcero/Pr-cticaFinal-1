@@ -49,6 +49,9 @@ public class ManejoExperimentos {
         gestor.deleteExperiment(filename);
     }
 
+    private void deleteExperiment(String filename) {
+    }
+
     private static void verInformacionPoblacion(ManejoExperimentos gestor, JFrame frame) {
         String info = gestor.getExperimentoActual().getPopulationInfo();
         JOptionPane.showMessageDialog(frame, info);

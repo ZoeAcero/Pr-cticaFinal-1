@@ -29,4 +29,8 @@ public class Experimento implements Serializable{
         }
         return null;
     }
+
+    public String getPopulationInfo() {
+        return null;
+    }
 }
