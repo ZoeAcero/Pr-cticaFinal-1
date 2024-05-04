@@ -8,7 +8,7 @@ public class Bacteria implements Serializable{
     private String endDate;
     private int initialBacteriaCount;
     private double temperature;
-    private double luminosity;
+    private String luminosity;
     private double initialFood;
     private int foodIncreaseDay;
     private double foodIncreaseAmount;
@@ -20,7 +20,7 @@ public class Bacteria implements Serializable{
         this.endDate = endDate;
         this.initialBacteriaCount = initialBacteriaCount;
         this.temperature = temperature;
-        this.luminosity = Double.parseDouble(luminosity);
+        this.luminosity = luminosity;
         this.initialFood = initialFood;
         this.foodIncreaseDay = foodIncreaseDay;
         this.foodIncreaseAmount = foodIncreaseAmount;
@@ -47,7 +47,7 @@ public class Bacteria implements Serializable{
         return temperature;
     }
 
-    public double getLuminosity() {
+    public String getLuminosity() {
         return luminosity;
     }
 
@@ -87,7 +87,7 @@ public class Bacteria implements Serializable{
         this.temperature = temperature;
     }
 
-    public void setLuminosity(double luminosity) {
+    public void setLuminosity(String luminosity) {
         this.luminosity = luminosity;
     }
 
