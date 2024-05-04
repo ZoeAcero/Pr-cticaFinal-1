@@ -38,6 +38,9 @@ public class GestionPoblaciones  extends JFrame{
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
+    private void agregarPoblacion(PoblacionBacteria poblacion) {
+    }
+
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
