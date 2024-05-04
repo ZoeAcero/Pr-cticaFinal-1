@@ -32,6 +32,10 @@ public class Alimentos extends JFrame{
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
+    private String getNombre() {
+        return null;
+    }
+
     public Alimentos(String nombre, double cantidadNutrientes) {
     }
 
