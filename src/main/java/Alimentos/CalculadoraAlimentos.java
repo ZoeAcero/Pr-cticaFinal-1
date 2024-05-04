@@ -20,4 +20,18 @@ public class CalculadoraAlimentos extends JFrame {
         resultadoField = new JTextField();
         resultadoField.setEditable(false);
         add(resultadoField);
+
+        JButton button = new JButton("Calcular");
+        button.addActionListener(e -> {
+            int numeroBacteriasIniciales = Integer.parseInt(numeroBacteriasInicialesField.getText());
+            PoblacionBacteria poblacion = new PoblacionBacteria(numeroBacteriasIniciales);
+            calculador = new CalculadoraAlimentos();
+            double resultado = calculador.calcularAlimento(poblacion);
+            resultadoField.setText(String.valueOf(resultado));
+        });
+        add(button);
+
+        setSize(300, 200);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
 }
