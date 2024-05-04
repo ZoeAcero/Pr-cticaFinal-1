@@ -26,5 +26,14 @@ public class Alimentos extends JFrame{
             alimentos = new Alimentos(nombre, cantidadNutrientes);
             JOptionPane.showMessageDialog(null, "Alimento guardado: " + alimento.getNombre());
         });
+        add(button);
+
+        setSize(300, 200);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(() -> new AlimentoGUI().setVisible(true));
+    }
         }
 }
