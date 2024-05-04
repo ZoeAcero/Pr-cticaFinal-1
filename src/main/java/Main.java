@@ -17,4 +17,16 @@ public class Main {
         JPanel panel = new JPanel();
         frame.add(panel);
 
+        JButton abrirButton = new JButton("Abrir un archivo que contenga un experimento");
+        abrirButton.addActionListener(e -> abrirExperimento(gestor, frame));
+        panel.add(abrirButton);
+
+        JButton crearExperimentoButton = new JButton("Crear un nuevo experimento");
+        crearExperimentoButton.addActionListener(e -> crearNuevoExperimento(gestor, frame));
+        panel.add(crearExperimentoButton);
+
+        JButton crearPoblacionButton = new JButton("Crear una población de bacterias y añadirla al experimento actual");
+        crearPoblacionButton.addActionListener(e -> crearNuevaPoblacion(gestor, frame));
+        panel.add(crearPoblacionButton);
+
     }
