@@ -43,4 +43,3 @@ public class Alimentos extends JFrame{
         SwingUtilities.invokeLater(() -> new Alimentos().setVisible(true));
     }
         }
-}
