@@ -45,6 +45,6 @@ public class GestionArchivos extends JFrame{
     }
 
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> new GestorDeArchivosGUI().setVisible(true));
+        SwingUtilities.invokeLater(() -> new GestionArchivos().setVisible(true));
     }
 }
