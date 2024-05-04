@@ -29,4 +29,20 @@ public class Main {
         crearPoblacionButton.addActionListener(e -> crearNuevaPoblacion(gestor, frame));
         panel.add(crearPoblacionButton);
 
+        JButton visualizarPoblacionesButton = new JButton("Visualizar los nombres de todas las poblaciones de bacterias del experimento actual");
+        visualizarPoblacionesButton.addActionListener(e -> visualizarPoblaciones(gestor, frame));
+        panel.add(visualizarPoblacionesButton);
+
+        JButton borrarPoblacionButton = new JButton("Borrar una población de bacterias del experimento actual");
+        borrarPoblacionButton.addActionListener(e -> borrarPoblacion(gestor, frame));
+        panel.add(borrarPoblacionButton);
+
+        JButton verInformacionButton = new JButton("Ver información detallada de una población de bacterias del experimento actual");
+        verInformacionButton.addActionListener(e -> verInformacionPoblacion(gestor, frame));
+        panel.add(verInformacionButton);
+
+        JButton guardarButton = new JButton("Guardar");
+        guardarButton.addActionListener(e -> guardarExperimento(gestor, frame));
+        panel.add(guardarButton);
+
     }
