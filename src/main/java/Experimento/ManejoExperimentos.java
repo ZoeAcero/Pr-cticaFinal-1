@@ -69,4 +69,7 @@ public class ManejoExperimentos {
     public Experimento.Experimento getExperimentoActual() {
         return null;
     }
+
+    public void abrirExperimento(String nombreExperimentoSeleccionado) {
+    }
 }

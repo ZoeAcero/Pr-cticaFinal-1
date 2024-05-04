@@ -61,7 +61,7 @@ public class Main {
             JOptionPane.showMessageDialog(null, comboBox, "Selecciona un experimento", JOptionPane.QUESTION_MESSAGE);
             String nombreExperimentoSeleccionado = (String) comboBox.getSelectedItem();
             gestor.abrirExperimento(nombreExperimentoSeleccionado);
-            Experimento experimentoActual = gestor.getExperimentoActual();
+            Experimento experimento experimentoActual = gestor.getExperimentoActual();
             JOptionPane.showMessageDialog(frame, experimentoActual.toString());
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(frame, "Error al abrir el experimento: " + ex.getMessage());
