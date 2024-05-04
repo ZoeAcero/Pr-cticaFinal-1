@@ -19,7 +19,7 @@ public class GestionPoblaciones  extends JFrame{
         addButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                PoblacionBacteria poblacion = new PoblacionBacteria(numeroBacteriasIniciales);
+                PoblacionBacteria poblacion = new PoblacionBacteria();
                 gestor.agregarPoblacion(poblacion);
                 listModel.addElement(poblacion);
             }

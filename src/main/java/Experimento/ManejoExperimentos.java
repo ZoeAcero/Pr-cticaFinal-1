@@ -71,7 +71,7 @@ public class ManejoExperimentos {
         ManejoExperimentos manager = new ManejoExperimentos();
         Experimento experiment = manager.createNewExperiment("experimento1");
         int numeroBacteriasIniciales = 0;
-        PoblacionBacteria poblacion = new PoblacionBacteria(numeroBacteriasIniciales);
+        PoblacionBacteria poblacion = new PoblacionBacteria();
         experiment.addPopulation(poblacion);
         manager.saveExperiment(experiment, "experimento1");
 
