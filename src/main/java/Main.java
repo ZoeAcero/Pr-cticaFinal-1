@@ -100,6 +100,25 @@ public class Main {
             JOptionPane.showMessageDialog(frame, "Error al crear la población: " + ex.getMessage());
         }
 
-        
+    }
 
+    private static void visualizarPoblaciones(ManejoExperimentos gestor, JFrame frame) {
+        try {
+            List<String> nombresPoblaciones = gestor.getNombresPoblaciones();
+            JOptionPane.showMessageDialog(frame, nombresPoblaciones);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(frame, "Error al visualizar las poblaciones: " + ex.getMessage());
+        }
+    }
+
+    private static void borrarPoblacion(ManejoExperimentos gestor, JFrame frame) {
+        try {
+            List<String> nombresPoblaciones = gestor.getNombresPoblaciones();
+            JComboBox<String> comboBox = new JComboBox<>(nombresPoblaciones.toArray(new String[0]));
+            JOptionPane.showMessageDialog(null, comboBox, "Selecciona una población", JOptionPane.QUESTION_MESSAGE);
+            String nombrePoblacionSeleccionada = (String) comboBox.getSelectedItem();
+            gestor.borrarPoblacion(nombrePoblacionSeleccionada);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(frame, "Error al borrar la población: " + ex.getMessage());
+        }
     }
