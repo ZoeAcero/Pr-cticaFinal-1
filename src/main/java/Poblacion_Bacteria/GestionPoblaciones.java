@@ -38,4 +38,13 @@ public class GestionPoblaciones  extends JFrame{
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new GestionPoblaciones().setVisible(true);
+            }
+        });
+    }
+
     }
