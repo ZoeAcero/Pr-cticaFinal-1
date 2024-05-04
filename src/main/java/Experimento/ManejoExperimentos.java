@@ -47,7 +47,7 @@ public class ManejoExperimentos {
     public static void main(String[] args) {
         ManejoExperimentos manager = new ManejoExperimentos();
         Experimento experiment = manager.createNewExperiment("experimento1");
-        PoblacionBacteria poblacion = new PoblacionBacteria();
+        PoblacionBacteria poblacion = new PoblacionBacteria(numeroBacteriasIniciales);
         experiment.addPopulation(poblacion);
         try {
             manager.saveExperiment(experiment, "experimento1");

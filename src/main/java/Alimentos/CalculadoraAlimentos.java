@@ -35,6 +35,6 @@ public class CalculadoraAlimentos extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> new CalculadorDeAlimentoGUI().setVisible(true));
+        SwingUtilities.invokeLater(() -> new CalculadoraAlimentos().setVisible(true));
     }
 }

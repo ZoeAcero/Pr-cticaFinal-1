@@ -17,7 +17,7 @@ public class PoblacionBacteria extends JFrame implements Serializable{
     private JTextField foodIncreaseAmountField;
     private JTextField finalFoodField;
 
-    public PoblacionBacteria() {
+    public PoblacionBacteria(int numeroBacteriasIniciales) {
         setLayout(new GridLayout(11, 2));
 
         add(new JLabel("Name:"));
