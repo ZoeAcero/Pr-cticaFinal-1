@@ -24,12 +24,15 @@ public class Alimentos extends JFrame{
             String nombre = nombreField.getText();
             double cantidadNutrientes = Double.parseDouble(cantidadNutrientesField.getText());
             alimentos = new Alimentos(nombre, cantidadNutrientes);
-            JOptionPane.showMessageDialog(null, "Alimento guardado: " + alimento.getNombre());
+            JOptionPane.showMessageDialog(null, "Alimento guardado: " + alimentos.getNombre());
         });
         add(button);
 
         setSize(300, 200);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+
+    public Alimentos(String nombre, double cantidadNutrientes) {
     }
 
     public static void main(String[] args) {
