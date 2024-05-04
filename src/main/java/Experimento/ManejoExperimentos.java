@@ -65,4 +65,8 @@ public class ManejoExperimentos {
     public List<String> getNombresExperimentos() {
         return null;
     }
+
+    public Experimento.Experimento getExperimentoActual() {
+        return null;
+    }
 }
