@@ -106,5 +106,26 @@ public class Bacteria implements Serializable{
     public void setFinalFood(double finalFood) {
         this.finalFood = finalFood;
     }
-    
+
+    @Override
+    public String toString() {
+        return name;
+    }
+
+    public String toCSV() {
+        return name + "," + startDate + "," + endDate + "," + initialBacteriaCount + "," + temperature + "," + luminosity + "," + initialFood + "," + foodIncreaseDay + "," + foodIncreaseAmount + "," + finalFood;
+    }
+
+    public static Bacteria fromCSV(String csv) {
+        String[] parts = csv.split(",");
+        return new Bacteria(parts[0], parts[1], parts[2], Integer.parseInt(parts[3]), Double.parseDouble(parts[4]), parts[5], Double.parseDouble(parts[6]), Integer.parseInt(parts[7]), Double.parseDouble(parts[8]), Double.parseDouble(parts[9]));
+    }
+
+    public static void main(String[] args) {
+        Bacteria bacteria = new Bacteria("Bacteria 1", "2021-01-01", "2021-01-31", 100, 37.5, "High", 100, 1, 10, 200);
+        System.out.println(bacteria);
+        System.out.println(bacteria.toCSV());
+        System.out.println(Bacteria.fromCSV(bacteria.toCSV()));
+    }
+
 }
