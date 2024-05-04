@@ -53,7 +53,7 @@ public class Main {
         frame.setVisible(true);
     }
 
-    private static void abrirExperimento(ManejoExperimentos gestor, JFrame frame) {
+    private static void openExperiment(ManejoExperimentos gestor, JFrame frame) {
         try {
             List<String> nombresExperimentos = gestor.getNombresExperimentos();
             JComboBox<String> comboBox = new JComboBox<>(nombresExperimentos.toArray(new String[0]));

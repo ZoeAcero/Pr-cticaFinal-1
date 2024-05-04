@@ -1,5 +1,6 @@
 package Experimento;
 
+import java.util.*;
 import java.io.*;
 import java.util.*;
 import Poblacion_Bacteria.PoblacionBacteria;
@@ -59,5 +60,9 @@ public class ManejoExperimentos {
         for (String experimento : allExperiments) {
             System.out.println(experimento); // Imprimir el nombre del experimento
         }
+    }
+
+    public List<String> getNombresExperimentos() {
+        return null;
     }
 }
