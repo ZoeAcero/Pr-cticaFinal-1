@@ -16,5 +16,15 @@ public class GestionPoblaciones  extends JFrame{
         list = new JList<>(listModel);
 
         JButton addButton = new JButton("Add");
+        addButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Here you can add code to create and add a new PoblacionDeBacterias instance
+                // For example:
+                PoblacionBacteria poblacion = new PoblacionBacteria();
+                gestor.agregarPoblacion(poblacion);
+                listModel.addElement(poblacion);
+            }
+        });
 
     }
