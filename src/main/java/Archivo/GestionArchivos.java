@@ -38,4 +38,13 @@ public class GestionArchivos extends JFrame{
             gestor.guardarArchivo(rutaArchivo, experimento);
             JOptionPane.showMessageDialog(null, "Experimento guardado en: " + rutaArchivo);
         });
+        add(guardarButton);
+
+        setSize(300, 200);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(() -> new GestorDeArchivosGUI().setVisible(true));
+    }
 }
