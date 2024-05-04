@@ -33,7 +33,7 @@ public class Alimentos extends JFrame{
     }
 
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> new AlimentoGUI().setVisible(true));
+        SwingUtilities.invokeLater(() -> new Alimentos().setVisible(true));
     }
         }
 }
