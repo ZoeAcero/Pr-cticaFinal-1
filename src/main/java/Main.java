@@ -122,3 +122,27 @@ public class Main {
             JOptionPane.showMessageDialog(frame, "Error al borrar la población: " + ex.getMessage());
         }
     }
+
+private static void verInformacionPoblacion(ManejoExperimentos gestor, JFrame frame) {
+        try {
+            List<String> nombresPoblaciones = gestor.getNombresPoblaciones();
+            JComboBox<String> comboBox = new JComboBox<>(nombresPoblaciones.toArray(new String[0]));
+            JOptionPane.showMessageDialog(null, comboBox, "Selecciona una población", JOptionPane.QUESTION_MESSAGE);
+            String nombrePoblacionSeleccionada = (String) comboBox.getSelectedItem();
+            PoblacionDeBacterias poblacionSeleccionada = gestor.getPoblacion(nombrePoblacionSeleccionada);
+            JOptionPane.showMessageDialog(frame, poblacionSeleccionada.toString());
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(frame, "Error al ver la información de la población: " + ex.getMessage());
+        }
+    }
+
+    private static void guardarExperimento(ManejoExperimentos gestor, JFrame frame) {
+        try {
+            gestor.guardarExperimento();
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(frame, "Error al guardar el experimento: " + ex.getMessage());
+        }
+    }
+}
+
+
