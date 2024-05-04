@@ -19,11 +19,21 @@ public class GestionPoblaciones  extends JFrame{
         addButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Here you can add code to create and add a new PoblacionDeBacterias instance
-                // For example:
                 PoblacionBacteria poblacion = new PoblacionBacteria();
                 gestor.agregarPoblacion(poblacion);
                 listModel.addElement(poblacion);
+            }
+        });
+
+        JButton removeButton = new JButton("Remove");
+        removeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                PoblacionBacteria selectedPoblacion = list.getSelectedValue();
+                if (selectedPoblacion != null) {
+                    gestor.eliminarPoblacion(selectedPoblacion);
+                    listModel.removeElement(selectedPoblacion);
+                }
             }
         });
 
@@ -39,6 +49,11 @@ public class GestionPoblaciones  extends JFrame{
     }
 
     private void agregarPoblacion(PoblacionBacteria poblacion) {
+        listModel.addElement(poblacion);
+    }
+
+    private void eliminarPoblacion(PoblacionBacteria poblacion) {
+        listModel.removeElement(poblacion);
     }
 
     public static void main(String[] args) {
@@ -50,4 +65,4 @@ public class GestionPoblaciones  extends JFrame{
         });
     }
 
-    }
+}
