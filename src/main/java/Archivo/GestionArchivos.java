@@ -7,7 +7,7 @@ import java.awt.*;
 public class GestionArchivos extends JFrame{
     private JTextField rutaArchivoField;
     private JTextArea experimentoArea;
-    private GestionArchivos gestor;
+    private GestorDeArchivos gestor; // Changed from GestionArchivos to GestorDeArchivos
 
     public GestionArchivos() {
         setLayout(new GridLayout(3, 2));
@@ -24,7 +24,7 @@ public class GestionArchivos extends JFrame{
         JButton abrirButton = new JButton("Abrir");
         abrirButton.addActionListener(e -> {
             String rutaArchivo = rutaArchivoField.getText();
-            gestor = new GestionArchivos(); // Changed from GestionArchivos to GestorDeArchivos
+            gestor = new GestorDeArchivos(); // Changed from GestionArchivos to GestorDeArchivos
             Experimento experimento = gestor.abrirArchivo(rutaArchivo);
             experimentoArea.setText(experimento.toString());
         });
