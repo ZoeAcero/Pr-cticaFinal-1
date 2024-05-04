@@ -28,4 +28,14 @@ public class GestionArchivos extends JFrame{
             Experimento experimento = gestor.abrirArchivo(rutaArchivo);
             experimentoArea.setText(experimento.toString());
         });
+        add(abrirButton);
+
+        JButton guardarButton = new JButton("Guardar");
+        guardarButton.addActionListener(e -> {
+            String rutaArchivo = rutaArchivoField.getText();
+            // You need to create an Experimento object here. Replace this with your actual Experimento object.
+            Experimento experimento = new Experimento();
+            gestor.guardarArchivo(rutaArchivo, experimento);
+            JOptionPane.showMessageDialog(null, "Experimento guardado en: " + rutaArchivo);
+        });
 }
