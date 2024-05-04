@@ -34,6 +34,11 @@ public class CalculadoraAlimentos extends JFrame {
         setSize(300, 200);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
+
+    private double calcularAlimento(PoblacionBacteria poblacion) {
+        return 0;
+    }
+
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> new CalculadoraAlimentos().setVisible(true));
     }
