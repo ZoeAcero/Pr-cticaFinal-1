@@ -98,4 +98,10 @@ public class ManejoExperimentos {
 
     public void abrirExperimento(String nombreExperimentoSeleccionado) {
     }
+
+    public void crearNuevoExperimento() {
+    }
+
+    public void crearNuevaPoblacion() {
+    }
 }
